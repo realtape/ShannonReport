@@ -232,13 +232,52 @@
     th, td { text-align: left; padding: 9px; border-bottom: 1px solid #e8dece; vertical-align: top; }
     th { color: #6e2431; font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; }
     .pill { display: inline-block; padding: 3px 8px; border-radius: 999px; background: #f3e1d2; border: 1px solid #e2c6ae; font-size: .78rem; }
+    .g-head {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: #6a4a47;
+      font-size: .84rem;
+    }
+    .g-head .pill { justify-self: center; }
+    .gantt { display: grid; gap: 8px; }
+    .g-row {
+      display: grid;
+      grid-template-columns: minmax(220px, 320px) 1fr;
+      gap: 8px;
+      align-items: center;
+    }
+    .g-label strong { display: block; color: #4f1d27; font-size: .86rem; }
+    .g-label span { color: var(--muted); font-size: .78rem; }
+    .g-track {
+      position: relative;
+      height: 18px;
+      border-radius: 999px;
+      background: #f3ede3;
+      border: 1px solid #e3d7c7;
+      overflow: hidden;
+    }
+    .g-bar {
+      position: absolute;
+      top: 2px;
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #b8892f, #d3a64c);
+      box-shadow: 0 1px 4px rgba(97, 67, 16, .25);
+    }
+    .g-bar.critical {
+      background: linear-gradient(90deg, #8f1724, #c42f43);
+      box-shadow: 0 1px 6px rgba(143, 23, 36, .35);
+    }
     .danger { color: var(--danger); }
     .hidden-card { display: none !important; }
     .compact .hs-card { padding: 8px; }
     .compact .hs-card h4 { font-size: .86rem; margin-bottom: 6px; }
     .compact .hs-meta, .compact .hs-sub, .compact .hs-blocker, .compact .hs-foot { font-size: .74rem; }
     @media (max-width: 1180px) {
-      .split, .three { grid-template-columns: 1fr; }
+      .split, .three, .g-row { grid-template-columns: 1fr; }
       .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
   </style>
@@ -258,6 +297,7 @@
       <div class="actions">
         <button type="button" class="btn" data-action="export">Export</button>
         <button type="button" class="btn" data-action="metrics">Metrics</button>
+        <button type="button" class="btn" data-action="gantt">Gantt</button>
         <button type="button" class="btn primary" data-action="add-ticket">Add tickets</button>
       </div>
     </div>
@@ -284,7 +324,7 @@
     <section class="hero">
       <h1>Shannon CEO Marketing + Event Attribution Workspace</h1>
       <div class="sub">HubSpot-style environment emulated in DYADlaw colors for team ownership, approvals, channel KPIs, SEO, and event conversion tracking.</div>
-      <div class="meta">Generated: 2026-04-02T02:55:44</div>
+      <div class="meta">Generated: 2026-04-02T04:48:49</div>
       <div class="kpis">
         <div class="kpi"><div class="label">Team Members</div><div class="val">5</div></div>
         <div class="kpi"><div class="label">Tracked Assets</div><div class="val">5</div></div>
@@ -468,6 +508,13 @@
           </table>
         </div>
       </article>
+
+      <article class="panel" id="gantt-panel">
+        <div class="panel-head"><h2>Delivery Gantt Timeline</h2><span class="muted">Critical path tasks are highlighted in red</span></div>
+        <div class="panel-body">
+          <div class='g-head'><span>Apr 01, 2026</span><span class='pill'>Critical Path Highlight</span><span>Apr 09, 2026</span></div><div class='gantt'><div class='g-row'><div class='g-label'><strong>VAWA confidentiality myth</strong><span>Carlos • Urgent</span></div><div class='g-track'><div class='g-bar critical' style='left:0.00%;width:11.11%'></div></div></div><div class='g-row'><div class='g-label'><strong>Citizenship fear / English exam short</strong><span>Carlos • High</span></div><div class='g-track'><div class='g-bar critical' style='left:11.11%;width:11.11%'></div></div></div><div class='g-row'><div class='g-label'><strong>Monthly Facebook Live Q&A</strong><span>Tammy • Urgent</span></div><div class='g-track'><div class='g-bar critical' style='left:11.11%;width:44.44%'></div></div></div><div class='g-row'><div class='g-label'><strong>VAWA no police report nurture email</strong><span>Carlos • High</span></div><div class='g-track'><div class='g-bar critical' style='left:22.22%;width:22.22%'></div></div></div><div class='g-row'><div class='g-label'><strong>VAWA confidentiality blog</strong><span>Carlos • High</span></div><div class='g-track'><div class='g-bar critical' style='left:55.56%;width:44.44%'></div></div></div></div>
+        </div>
+      </article>
     </section>
   </main>
   <script>
@@ -529,6 +576,9 @@
           }
           if (action === 'metrics') {
             document.getElementById('metrics-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+          if (action === 'gantt') {
+            document.getElementById('gantt-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
           if (action === 'add-ticket') {
             window.location.href = 'mailto:tammy@dyadlaw.com?subject=New%20Marketing%20Ticket&body=Please%20add%20a%20new%20ticket%20to%20the%20board%20with%20owner%2C%20priority%2C%20and%20deadline.';
