@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T01:42:50",
+  "generated_at": "2026-04-02T01:50:38",
   "team_members": [
     "Alexis",
     "Carlos",
@@ -13,38 +13,6 @@
     "Daniel": 3,
     "Tammy": 2,
     "Shannon": 1
-  },
-  "ownership": {
-    "Carlos": {
-      "as_draft_owner": 4,
-      "as_reviewer": 0,
-      "as_editor": 0,
-      "pending_reviews": 0
-    },
-    "Daniel": {
-      "as_draft_owner": 0,
-      "as_reviewer": 3,
-      "as_editor": 0,
-      "pending_reviews": 3
-    },
-    "Alexis": {
-      "as_draft_owner": 0,
-      "as_reviewer": 0,
-      "as_editor": 3,
-      "pending_reviews": 0
-    },
-    "Tammy": {
-      "as_draft_owner": 1,
-      "as_reviewer": 1,
-      "as_editor": 0,
-      "pending_reviews": 0
-    },
-    "Shannon": {
-      "as_draft_owner": 0,
-      "as_reviewer": 1,
-      "as_editor": 0,
-      "pending_reviews": 1
-    }
   },
   "status_summary": {
     "Reviewer: Pending": 4,
@@ -208,5 +176,148 @@
     "biggest_conversion_leak": "Website to consult conversion",
     "operational_blocker": "Approval bottleneck + unclear publishing ownership",
     "decision_next_week": "Rebuild high-intent pages, reduce IG volume, repurpose winners faster"
+  },
+  "marketing_metrics": {
+    "executive_metrics": [
+      {
+        "metric": "Instagram Followers",
+        "value": "2,735",
+        "benchmark": "Competitors: 55K\u20132M",
+        "status": "Below Benchmark",
+        "trend": "Stable",
+        "notes": "Smallest among tracked competitors"
+      },
+      {
+        "metric": "Instagram Posts Published",
+        "value": "3,902",
+        "benchmark": "Competitors: 1,393\u20132,379",
+        "status": "Above Average",
+        "trend": "Active",
+        "notes": "High output volume vs. peers"
+      },
+      {
+        "metric": "Facebook Top Post (Likes)",
+        "value": "27,600",
+        "benchmark": "Industry: 100\u2013500 for legal",
+        "status": "Exceptional",
+        "trend": "Spike (Oct 2025)",
+        "notes": "Live Q&A \u2014 viral outlier"
+      },
+      {
+        "metric": "TikTok #1 Video Views",
+        "value": "2,204,606",
+        "benchmark": "N/A",
+        "status": "Strong",
+        "trend": "Growing",
+        "notes": "Citizenship CTA video"
+      },
+      {
+        "metric": "TikTok Total Top-5 Views",
+        "value": "8,222,810",
+        "benchmark": "N/A",
+        "status": "Strong",
+        "trend": "Growing",
+        "notes": "Viral content engine"
+      },
+      {
+        "metric": "YouTube Total Impressions",
+        "value": "59,284",
+        "benchmark": "N/A",
+        "status": "Building",
+        "trend": "Growing",
+        "notes": "59 videos published"
+      },
+      {
+        "metric": "YouTube Total Views",
+        "value": "11,955",
+        "benchmark": "N/A",
+        "status": "Building",
+        "trend": "Growing",
+        "notes": "4.35% CTR (above 2\u20134% avg)"
+      },
+      {
+        "metric": "YouTube Watch Hours",
+        "value": "391.4",
+        "benchmark": "4,000 needed for monetization",
+        "status": "Early Stage",
+        "trend": "Growing",
+        "notes": "Avg view duration: 1:57"
+      },
+      {
+        "metric": "YouTube CTR",
+        "value": "4.35%",
+        "benchmark": "Industry avg: 2\u20134%",
+        "status": "Above Benchmark",
+        "trend": "Stable",
+        "notes": "Good thumbnail/title quality"
+      },
+      {
+        "metric": "Marketing Budget",
+        "value": "$22,000",
+        "benchmark": "N/A",
+        "status": "Allocated",
+        "trend": "6-month plan",
+        "notes": "36% Google, 36% Social, 18% Production"
+      },
+      {
+        "metric": "Competitive Rank (Social)",
+        "value": "6th of 10",
+        "benchmark": "Top: Jacob Sapochnick",
+        "status": "Growth Needed",
+        "trend": "\u2014",
+        "notes": "Strong content, low follower count"
+      }
+    ],
+    "facebook_highlight": {
+      "post": "Live Q&A on immigration updates",
+      "date": "Oct 2025",
+      "likes": "27600",
+      "comments": "1331"
+    },
+    "tiktok_highlight": {
+      "video": "Ser ciudadano te da m\u00e1s derechos\u2026 (Citizenship CTA)",
+      "views": "2204606",
+      "engagements": "8146",
+      "engagement_rate": "0.37%"
+    },
+    "youtube_highlight": {
+      "videos": "59",
+      "impressions": "59284",
+      "views": "11955",
+      "ctr": "4.35%",
+      "watch_hours": "391.45"
+    },
+    "seo_summary": {
+      "total_clicks": 4683,
+      "total_impressions": 303936,
+      "avg_ctr": "1.62%",
+      "avg_position": "14.88"
+    },
+    "top_query": {
+      "query": "dyadlaw",
+      "clicks": "1097.0",
+      "impressions": "5406.0",
+      "ctr": "20.29%",
+      "position": "1.15"
+    },
+    "top_page": {
+      "page": "https://dyadlaw.com/",
+      "clicks": "1807.0",
+      "impressions": "39834.0",
+      "ctr": "4.54%",
+      "position": "22.05"
+    },
+    "event_funnel": {
+      "event_name": "Facebook Live Q&A",
+      "event_date_label": "October 2025",
+      "reactions": "27,600",
+      "comments": "1,331",
+      "contacts": 325,
+      "consults_scheduled": 41,
+      "conversions": 3,
+      "consult_rate_pct": "12.62%",
+      "close_rate_pct": "0.92%",
+      "attribution_status": "partial"
+    }
   }
 }
