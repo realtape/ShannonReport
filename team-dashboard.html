@@ -6,15 +6,15 @@
   <title>DYADlaw Team Dashboard</title>
   <style>
     :root {
-      --bg:#0b1020;
-      --panel:#121a31;
-      --panel-2:#182241;
-      --text:#edf2ff;
-      --muted:#9fb0d8;
-      --line:#2a3763;
-      --accent:#44d5b2;
-      --warn:#ffca67;
-      --danger:#ff7a8a;
+      --bg:#f4efe7;
+      --panel:#fff8ef;
+      --panel-2:#fff3e0;
+      --text:#2d1a1a;
+      --muted:#7b5b57;
+      --line:#e5d3bd;
+      --accent:#7a1f2a;
+      --warn:#b8892f;
+      --danger:#9f1d28;
     }
     *{box-sizing:border-box}
     body{
@@ -22,21 +22,21 @@
       font-family:"Segoe UI",Tahoma,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at 15% 0%, #223057 0%, transparent 35%),
-        radial-gradient(circle at 80% 20%, #1a2a55 0%, transparent 30%),
+        radial-gradient(circle at 15% 0%, #f3d6b4 0%, transparent 35%),
+        radial-gradient(circle at 80% 20%, #f0d7bd 0%, transparent 30%),
         var(--bg);
     }
     .wrap{max-width:1200px;margin:0 auto;padding:24px 16px 48px}
     .hero{
-      background:linear-gradient(120deg,#1d2a50,#0f1836);
+      background:linear-gradient(120deg,#7a1f2a,#5a0f1a);
       border:1px solid var(--line);
       border-radius:18px;
       padding:20px;
-      box-shadow:0 20px 60px rgba(0,0,0,.35);
+      box-shadow:0 20px 60px rgba(68,23,12,.2);
     }
     h1{margin:0 0 8px;font-size:clamp(1.6rem,3vw,2.6rem)}
-    .sub{color:var(--muted)}
-    .meta{margin-top:10px;font-size:.9rem;color:#bac7ea}
+    .sub{color:#f3dfd6}
+    .meta{margin-top:10px;font-size:.9rem;color:#f2d8c9}
     .grid{display:grid;gap:14px;margin-top:16px}
     .members{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
     .member-card{
@@ -50,20 +50,20 @@
     .member-label{color:var(--muted);font-size:.85rem}
     .two-col{grid-template-columns:1.3fr .9fr}
     .panel{
-      background:linear-gradient(180deg,var(--panel),#101832);
+      background:linear-gradient(180deg,var(--panel),var(--panel-2));
       border:1px solid var(--line);
       border-radius:14px;
       padding:14px;
     }
     h2{margin:0 0 10px;font-size:1.05rem}
     table{width:100%;border-collapse:collapse;font-size:.92rem}
-    th,td{text-align:left;padding:10px;border-bottom:1px solid #24315a;vertical-align:top}
-    th{color:#c9d6fb;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+    th,td{text-align:left;padding:10px;border-bottom:1px solid #e8d8c5;vertical-align:top}
+    th{color:#6f232f;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
     ul{margin:0;padding-left:18px}
     li{margin:0 0 10px}
     li span{color:var(--muted)}
     .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
-    .kpi{background:#0f1732;border:1px solid #28386b;border-radius:12px;padding:10px}
+    .kpi{background:#fffaf2;border:1px solid #efd9c2;border-radius:12px;padding:10px}
     .kpi .label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
     .kpi .val{margin-top:6px;font-weight:700}
     .warn{color:var(--warn)} .danger{color:var(--danger)} .ok{color:var(--accent)}
@@ -78,7 +78,7 @@
     <section class="hero">
       <h1>DYADlaw Team Operations Dashboard</h1>
       <div class="sub">Copy-safe dashboard generated from tracker files. Original reports remain unchanged.</div>
-      <div class="meta">Generated: 2026-04-02T01:31:03 | Source: C:\Users\Usuario\Downloads\DYADlaw_Approval_Tracking_and_Weekly_Reporting.xlsx</div>
+      <div class="meta">Generated: 2026-04-02T01:32:04 | Source: C:\Users\Usuario\Downloads\DYADlaw_Approval_Tracking_and_Weekly_Reporting.xlsx</div>
       <div class="kpis">
         <div class="kpi"><div class="label">Team Members</div><div class="val">5</div></div>
         <div class="kpi"><div class="label">Tracked Assets</div><div class="val">5</div></div>
