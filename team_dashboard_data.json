@@ -1,0 +1,213 @@
+{
+  "generated_at": "2026-04-02T01:31:03",
+  "source_file": "C:\\Users\\Usuario\\Downloads\\DYADlaw_Approval_Tracking_and_Weekly_Reporting.xlsx",
+  "team_members": [
+    "Alexis",
+    "Carlos",
+    "Daniel",
+    "Shannon",
+    "Tammy"
+  ],
+  "team_load": {
+    "Carlos": 4,
+    "Alexis": 3,
+    "Daniel": 3,
+    "Tammy": 2,
+    "Shannon": 1
+  },
+  "ownership": {
+    "Carlos": {
+      "as_draft_owner": 4,
+      "as_reviewer": 0,
+      "as_editor": 0,
+      "pending_reviews": 0
+    },
+    "Daniel": {
+      "as_draft_owner": 0,
+      "as_reviewer": 3,
+      "as_editor": 0,
+      "pending_reviews": 3
+    },
+    "Alexis": {
+      "as_draft_owner": 0,
+      "as_reviewer": 0,
+      "as_editor": 3,
+      "pending_reviews": 0
+    },
+    "Tammy": {
+      "as_draft_owner": 1,
+      "as_reviewer": 1,
+      "as_editor": 0,
+      "pending_reviews": 0
+    },
+    "Shannon": {
+      "as_draft_owner": 0,
+      "as_reviewer": 1,
+      "as_editor": 0,
+      "pending_reviews": 1
+    }
+  },
+  "status_summary": {
+    "Reviewer: Pending": 4,
+    "Shannon: Pending": 5,
+    "Reviewer: In Review": 1
+  },
+  "approval_rows": [
+    {
+      "Asset ID": "APR-001",
+      "Asset Type": "Reel",
+      "Platform": "Instagram",
+      "Topic / Title": "VAWA confidentiality myth",
+      "Draft Owner": "Carlos",
+      "Draft Ready Date": "2026-04-01",
+      "Reviewer": "Daniel",
+      "Reviewer Status": "Pending",
+      "Shannon Final Approval": "Pending",
+      "Edit Owner": "Alexis",
+      "Edit Status": "Not Started",
+      "Scheduled Date": "",
+      "Published Date": "",
+      "Current Blocker": "Waiting on legal review",
+      "Priority": "Urgent",
+      "Final URL / File": "",
+      "Notes": "Use top-ranked VAWA confidentiality angle"
+    },
+    {
+      "Asset ID": "APR-002",
+      "Asset Type": "Email",
+      "Platform": "Email",
+      "Topic / Title": "VAWA no police report nurture email",
+      "Draft Owner": "Carlos",
+      "Draft Ready Date": "2026-04-03",
+      "Reviewer": "Tammy",
+      "Reviewer Status": "In Review",
+      "Shannon Final Approval": "Pending",
+      "Edit Owner": "",
+      "Edit Status": "",
+      "Scheduled Date": "2026-04-04",
+      "Published Date": "",
+      "Current Blocker": "Need Shannon approval before send",
+      "Priority": "High",
+      "Final URL / File": "",
+      "Notes": "Send only to consented list"
+    },
+    {
+      "Asset ID": "APR-003",
+      "Asset Type": "Live",
+      "Platform": "Facebook",
+      "Topic / Title": "Monthly Facebook Live Q&A",
+      "Draft Owner": "Tammy",
+      "Draft Ready Date": "2026-04-02",
+      "Reviewer": "Shannon",
+      "Reviewer Status": "Pending",
+      "Shannon Final Approval": "Pending",
+      "Edit Owner": "Alexis",
+      "Edit Status": "Planning",
+      "Scheduled Date": "2026-04-05",
+      "Published Date": "",
+      "Current Blocker": "Topic outline not finalized",
+      "Priority": "Urgent",
+      "Final URL / File": "",
+      "Notes": "Repurpose after live"
+    },
+    {
+      "Asset ID": "APR-004",
+      "Asset Type": "Blog",
+      "Platform": "Blog",
+      "Topic / Title": "VAWA confidentiality blog",
+      "Draft Owner": "Carlos",
+      "Draft Ready Date": "2026-04-06",
+      "Reviewer": "Daniel",
+      "Reviewer Status": "Pending",
+      "Shannon Final Approval": "Pending",
+      "Edit Owner": "",
+      "Edit Status": "",
+      "Scheduled Date": "2026-04-09",
+      "Published Date": "",
+      "Current Blocker": "Need SEO metadata and legal approval",
+      "Priority": "High",
+      "Final URL / File": "",
+      "Notes": "Support LP + nurture"
+    },
+    {
+      "Asset ID": "APR-005",
+      "Asset Type": "Short",
+      "Platform": "YouTube",
+      "Topic / Title": "Citizenship fear / English exam short",
+      "Draft Owner": "Carlos",
+      "Draft Ready Date": "2026-04-02",
+      "Reviewer": "Daniel",
+      "Reviewer Status": "Pending",
+      "Shannon Final Approval": "Pending",
+      "Edit Owner": "Alexis",
+      "Edit Status": "Not Started",
+      "Scheduled Date": "",
+      "Published Date": "",
+      "Current Blocker": "Editor capacity bottleneck",
+      "Priority": "High",
+      "Final URL / File": "",
+      "Notes": "Repurpose from winning clip"
+    }
+  ],
+  "top_blockers": [
+    {
+      "asset_id": "APR-001",
+      "topic": "VAWA confidentiality myth",
+      "blocker": "Waiting on legal review",
+      "owner": "Carlos"
+    },
+    {
+      "asset_id": "APR-002",
+      "topic": "VAWA no police report nurture email",
+      "blocker": "Need Shannon approval before send",
+      "owner": "Carlos"
+    },
+    {
+      "asset_id": "APR-003",
+      "topic": "Monthly Facebook Live Q&A",
+      "blocker": "Topic outline not finalized",
+      "owner": "Tammy"
+    },
+    {
+      "asset_id": "APR-004",
+      "topic": "VAWA confidentiality blog",
+      "blocker": "Need SEO metadata and legal approval",
+      "owner": "Carlos"
+    },
+    {
+      "asset_id": "APR-005",
+      "topic": "Citizenship fear / English exam short",
+      "blocker": "Editor capacity bottleneck",
+      "owner": "Carlos"
+    }
+  ],
+  "upcoming_schedule": [
+    {
+      "asset_id": "APR-002",
+      "topic": "VAWA no police report nurture email",
+      "scheduled_date": "2026-04-04",
+      "owner": "Carlos",
+      "reviewer": "Tammy"
+    },
+    {
+      "asset_id": "APR-003",
+      "topic": "Monthly Facebook Live Q&A",
+      "scheduled_date": "2026-04-05",
+      "owner": "Tammy",
+      "reviewer": "Shannon"
+    },
+    {
+      "asset_id": "APR-004",
+      "topic": "VAWA confidentiality blog",
+      "scheduled_date": "2026-04-09",
+      "owner": "Carlos",
+      "reviewer": "Daniel"
+    }
+  ],
+  "weekly_context": {
+    "top_winner": "Facebook Live / VAWA confidentiality / citizenship fear",
+    "biggest_conversion_leak": "Website to consult conversion",
+    "operational_blocker": "Approval bottleneck + unclear publishing ownership",
+    "decision_next_week": "Rebuild high-intent pages, reduce IG volume, repurpose winners faster"
+  }
+}

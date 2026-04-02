@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DYADlaw Team Dashboard</title>
+  <style>
+    :root {
+      --bg:#0b1020;
+      --panel:#121a31;
+      --panel-2:#182241;
+      --text:#edf2ff;
+      --muted:#9fb0d8;
+      --line:#2a3763;
+      --accent:#44d5b2;
+      --warn:#ffca67;
+      --danger:#ff7a8a;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 15% 0%, #223057 0%, transparent 35%),
+        radial-gradient(circle at 80% 20%, #1a2a55 0%, transparent 30%),
+        var(--bg);
+    }
+    .wrap{max-width:1200px;margin:0 auto;padding:24px 16px 48px}
+    .hero{
+      background:linear-gradient(120deg,#1d2a50,#0f1836);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:20px;
+      box-shadow:0 20px 60px rgba(0,0,0,.35);
+    }
+    h1{margin:0 0 8px;font-size:clamp(1.6rem,3vw,2.6rem)}
+    .sub{color:var(--muted)}
+    .meta{margin-top:10px;font-size:.9rem;color:#bac7ea}
+    .grid{display:grid;gap:14px;margin-top:16px}
+    .members{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+    .member-card{
+      background:linear-gradient(180deg,var(--panel),var(--panel-2));
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+    }
+    .member-name{font-weight:700}
+    .member-count{font-size:2rem;font-weight:800;color:var(--accent);margin:8px 0 4px}
+    .member-label{color:var(--muted);font-size:.85rem}
+    .two-col{grid-template-columns:1.3fr .9fr}
+    .panel{
+      background:linear-gradient(180deg,var(--panel),#101832);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+    }
+    h2{margin:0 0 10px;font-size:1.05rem}
+    table{width:100%;border-collapse:collapse;font-size:.92rem}
+    th,td{text-align:left;padding:10px;border-bottom:1px solid #24315a;vertical-align:top}
+    th{color:#c9d6fb;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+    ul{margin:0;padding-left:18px}
+    li{margin:0 0 10px}
+    li span{color:var(--muted)}
+    .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+    .kpi{background:#0f1732;border:1px solid #28386b;border-radius:12px;padding:10px}
+    .kpi .label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .kpi .val{margin-top:6px;font-weight:700}
+    .warn{color:var(--warn)} .danger{color:var(--danger)} .ok{color:var(--accent)}
+    @media (max-width: 980px) {
+      .two-col{grid-template-columns:1fr}
+      .kpis{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>DYADlaw Team Operations Dashboard</h1>
+      <div class="sub">Copy-safe dashboard generated from tracker files. Original reports remain unchanged.</div>
+      <div class="meta">Generated: 2026-04-02T01:31:03 | Source: C:\Users\Usuario\Downloads\DYADlaw_Approval_Tracking_and_Weekly_Reporting.xlsx</div>
+      <div class="kpis">
+        <div class="kpi"><div class="label">Team Members</div><div class="val">5</div></div>
+        <div class="kpi"><div class="label">Tracked Assets</div><div class="val">5</div></div>
+        <div class="kpi"><div class="label">Top Winner</div><div class="val ok">Facebook Live / VAWA confidentiality / citizenship fear</div></div>
+        <div class="kpi"><div class="label">Biggest Leak</div><div class="val danger">Website to consult conversion</div></div>
+      </div>
+    </section>
+
+    <section class="grid members">
+      
+            <article class="member-card">
+              <div class="member-name">Carlos</div>
+              <div class="member-count">4</div>
+              <div class="member-label">active assignments</div>
+            </article>
+            
+
+            <article class="member-card">
+              <div class="member-name">Alexis</div>
+              <div class="member-count">3</div>
+              <div class="member-label">active assignments</div>
+            </article>
+            
+
+            <article class="member-card">
+              <div class="member-name">Daniel</div>
+              <div class="member-count">3</div>
+              <div class="member-label">active assignments</div>
+            </article>
+            
+
+            <article class="member-card">
+              <div class="member-name">Tammy</div>
+              <div class="member-count">2</div>
+              <div class="member-label">active assignments</div>
+            </article>
+            
+
+            <article class="member-card">
+              <div class="member-name">Shannon</div>
+              <div class="member-count">1</div>
+              <div class="member-label">active assignments</div>
+            </article>
+            
+    </section>
+
+    <section class="grid two-col">
+      <section class="panel">
+        <h2>Team Task Board</h2>
+        <table>
+          <thead>
+            <tr><th>Asset</th><th>Topic</th><th>Owner</th><th>Reviewer</th><th>Review</th><th>Shannon</th><th>Blocker</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>APR-001</td><td>VAWA confidentiality myth</td><td>Carlos</td><td>Daniel</td><td>Pending</td><td>Pending</td><td>Waiting on legal review</td></tr>
+<tr><td>APR-002</td><td>VAWA no police report nurture email</td><td>Carlos</td><td>Tammy</td><td>In Review</td><td>Pending</td><td>Need Shannon approval before send</td></tr>
+<tr><td>APR-003</td><td>Monthly Facebook Live Q&A</td><td>Tammy</td><td>Shannon</td><td>Pending</td><td>Pending</td><td>Topic outline not finalized</td></tr>
+<tr><td>APR-004</td><td>VAWA confidentiality blog</td><td>Carlos</td><td>Daniel</td><td>Pending</td><td>Pending</td><td>Need SEO metadata and legal approval</td></tr>
+<tr><td>APR-005</td><td>Citizenship fear / English exam short</td><td>Carlos</td><td>Daniel</td><td>Pending</td><td>Pending</td><td>Editor capacity bottleneck</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="panel">
+        <h2>Current Blockers</h2>
+        <ul><li><strong>APR-001</strong> — VAWA confidentiality myth<br><span>Waiting on legal review</span></li>
+<li><strong>APR-002</strong> — VAWA no police report nurture email<br><span>Need Shannon approval before send</span></li>
+<li><strong>APR-003</strong> — Monthly Facebook Live Q&A<br><span>Topic outline not finalized</span></li>
+<li><strong>APR-004</strong> — VAWA confidentiality blog<br><span>Need SEO metadata and legal approval</span></li>
+<li><strong>APR-005</strong> — Citizenship fear / English exam short<br><span>Editor capacity bottleneck</span></li></ul>
+      </section>
+    </section>
+
+    <section class="grid two-col">
+      <section class="panel">
+        <h2>Upcoming Schedule</h2>
+        <ul><li><strong>2026-04-04</strong> — APR-002 / VAWA no police report nurture email<br><span>Owner: Carlos | Reviewer: Tammy</span></li>
+<li><strong>2026-04-05</strong> — APR-003 / Monthly Facebook Live Q&A<br><span>Owner: Tammy | Reviewer: Shannon</span></li>
+<li><strong>2026-04-09</strong> — APR-004 / VAWA confidentiality blog<br><span>Owner: Carlos | Reviewer: Daniel</span></li></ul>
+      </section>
+      <section class="panel">
+        <h2>Weekly Direction</h2>
+        <ul>
+          <li><strong>Top winner:</strong> <span>Facebook Live / VAWA confidentiality / citizenship fear</span></li>
+          <li><strong>Conversion leak:</strong> <span>Website to consult conversion</span></li>
+          <li><strong>Operational blocker:</strong> <span>Approval bottleneck + unclear publishing ownership</span></li>
+          <li><strong>Decision next week:</strong> <span>Rebuild high-intent pages, reduce IG volume, repurpose winners faster</span></li>
+        </ul>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
