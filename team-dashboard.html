@@ -60,6 +60,7 @@
     }
     .viewtabs { display: flex; gap: 8px; flex-wrap: wrap; }
     .tab {
+      cursor: pointer;
       padding: 8px 10px;
       border-radius: 8px;
       font-size: .82rem;
@@ -71,6 +72,7 @@
     .tab.active { background: #f7e7df; color: #5f131d; border-color: #f7e7df; }
     .actions { display: flex; align-items: center; gap: 8px; }
     .btn {
+      cursor: pointer;
       border-radius: 8px;
       border: 1px solid #b77982;
       background: rgba(255,255,255,.12);
@@ -102,6 +104,7 @@
       font-size: .87rem;
     }
     .chip {
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -209,6 +212,15 @@
     .split { display: grid; grid-template-columns: 1.1fr .9fr; gap: 10px; }
     .three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
     .mini-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; }
+    .member-card {
+      background: linear-gradient(180deg, #fff, #fff8ef);
+      border: 1px solid var(--line-soft);
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .member-name { font-weight: 700; color: #4f1d27; }
+    .member-count { font-size: 1.6rem; font-weight: 800; color: var(--brand); margin: 5px 0 2px; }
+    .member-label { color: var(--muted); font-size: .83rem; }
     .mini { background: #fff; border: 1px solid var(--line-soft); border-radius: 10px; padding: 10px; }
     .mini .n { font-size: 1.55rem; font-weight: 800; color: var(--brand); margin: 5px 0 3px; }
     .muted { color: var(--muted); }
@@ -221,6 +233,10 @@
     th { color: #6e2431; font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; }
     .pill { display: inline-block; padding: 3px 8px; border-radius: 999px; background: #f3e1d2; border: 1px solid #e2c6ae; font-size: .78rem; }
     .danger { color: var(--danger); }
+    .hidden-card { display: none !important; }
+    .compact .hs-card { padding: 8px; }
+    .compact .hs-card h4 { font-size: .86rem; margin-bottom: 6px; }
+    .compact .hs-meta, .compact .hs-sub, .compact .hs-blocker, .compact .hs-foot { font-size: .74rem; }
     @media (max-width: 1180px) {
       .split, .three { grid-template-columns: 1fr; }
       .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -233,16 +249,16 @@
       <div class="brandline">
         <span class="brand-badge">DYADlaw Marketing Hub</span>
         <div class="viewtabs">
-          <span class="tab active">All tickets</span>
-          <span class="tab">My open tickets</span>
-          <span class="tab">Unassigned tickets</span>
-          <span class="tab">Shannon Englert View</span>
+          <button type="button" class="tab active" data-view="all">All tickets</button>
+          <button type="button" class="tab" data-view="mine">My open tickets</button>
+          <button type="button" class="tab" data-view="unassigned">Unassigned tickets</button>
+          <button type="button" class="tab" data-view="shannon">Shannon Englert View</button>
         </div>
       </div>
       <div class="actions">
-        <span class="btn">Export</span>
-        <span class="btn">Metrics</span>
-        <span class="btn primary">Add tickets</span>
+        <button type="button" class="btn" data-action="export">Export</button>
+        <button type="button" class="btn" data-action="metrics">Metrics</button>
+        <button type="button" class="btn primary" data-action="add-ticket">Add tickets</button>
       </div>
     </div>
   </header>
@@ -251,24 +267,24 @@
     <section class="toolbar">
       <div class="toolbar-row">
         <input class="search" value="Search tickets, owners, campaigns, events" readonly>
-        <span class="chip">Board view</span>
-        <span class="chip">Website / Marketing</span>
-        <span class="chip">Filters</span>
-        <span class="chip">Sort</span>
+        <button type="button" class="chip" data-action="toggle-compact">Board view</button>
+        <button type="button" class="chip" data-action="focus-board">Website / Marketing</button>
+        <button type="button" class="chip" data-action="filter-blocked">Filters</button>
+        <button type="button" class="chip" data-action="sort-priority">Sort</button>
       </div>
       <div class="toolbar-row">
-        <span class="chip">Ticket owner</span>
-        <span class="chip">Create date</span>
-        <span class="chip">Last activity date</span>
-        <span class="chip">Priority</span>
-        <span class="chip">Advanced filters</span>
+        <button type="button" class="chip" data-action="filter-owner">Ticket owner</button>
+        <button type="button" class="chip" data-action="sort-created">Create date</button>
+        <button type="button" class="chip" data-action="sort-created">Last activity date</button>
+        <button type="button" class="chip" data-action="sort-priority">Priority</button>
+        <button type="button" class="chip" data-action="reset-filters">Advanced filters</button>
       </div>
     </section>
 
     <section class="hero">
       <h1>Shannon CEO Marketing + Event Attribution Workspace</h1>
       <div class="sub">HubSpot-style environment emulated in DYADlaw colors for team ownership, approvals, channel KPIs, SEO, and event conversion tracking.</div>
-      <div class="meta">Generated: 2026-04-02T02:41:33</div>
+      <div class="meta">Generated: 2026-04-02T02:55:44</div>
       <div class="kpis">
         <div class="kpi"><div class="label">Team Members</div><div class="val">5</div></div>
         <div class="kpi"><div class="label">Tracked Assets</div><div class="val">5</div></div>
@@ -279,13 +295,13 @@
     </section>
 
     <section class="layout">
-      <article class="panel">
+      <article class="panel" id="board-panel">
         <div class="panel-head">
           <h2>Team Ticket Board</h2>
           <span class="muted">Pipeline health by stage</span>
         </div>
         <div class="panel-body board-wrap">
-          <div class="hs-board"><section class='hs-col'><div class='hs-col-head'><span>New & Not Reviewed</span><span class='hs-count'>0</span></div><div class='hs-col-body'></div></section><section class='hs-col'><div class='hs-col-head'><span>Reviewed & Pending Dependencies</span><span class='hs-count'>3</span></div><div class='hs-col-body'><article class='hs-card'><h4>VAWA confidentiality myth</h4><div class='hs-meta'>Ticket owner: Carlos</div><div class='hs-meta'>Create date: 2026-04-01</div><div class='hs-meta'>Close target: TBD</div><div class='hs-divider'></div><div class='hs-priority'><span class='p-dot p-urgent'></span>Urgent</div><div class='hs-sub'>Review: Pending | Shannon: Pending</div><div class='hs-blocker'>Waiting on legal review</div><div class='hs-foot'><span>APR-001</span><span class='icons'>&#9633; &#9671; &#9993; &#8599;</span></div></article><article class='hs-card'><h4>VAWA confidentiality blog</h4><div class='hs-meta'>Ticket owner: Carlos</div><div class='hs-meta'>Create date: 2026-04-06</div><div class='hs-meta'>Close target: 2026-04-09</div><div class='hs-divider'></div><div class='hs-priority'><span class='p-dot p-high'></span>High</div><div class='hs-sub'>Review: Pending | Shannon: Pending</div><div class='hs-blocker'>Need SEO metadata and legal approval</div><div class='hs-foot'><span>APR-004</span><span class='icons'>&#9633; &#9671; &#9993; &#8599;</span></div></article><article class='hs-card'><h4>Citizenship fear / English exam short</h4><div class='hs-meta'>Ticket owner: Carlos</div><div class='hs-meta'>Create date: 2026-04-02</div><div class='hs-meta'>Close target: TBD</div><div class='hs-divider'></div><div class='hs-priority'><span class='p-dot p-high'></span>High</div><div class='hs-sub'>Review: Pending | Shannon: Pending</div><div class='hs-blocker'>Editor capacity bottleneck</div><div class='hs-foot'><span>APR-005</span><span class='icons'>&#9633; &#9671; &#9993; &#8599;</span></div></article></div></section><section class='hs-col'><div class='hs-col-head'><span>Working On</span><span class='hs-count'>2</span></div><div class='hs-col-body'><article class='hs-card'><h4>VAWA no police report nurture email</h4><div class='hs-meta'>Ticket owner: Carlos</div><div class='hs-meta'>Create date: 2026-04-03</div><div class='hs-meta'>Close target: 2026-04-04</div><div class='hs-divider'></div><div class='hs-priority'><span class='p-dot p-high'></span>High</div><div class='hs-sub'>Review: In Review | Shannon: Pending</div><div class='hs-blocker'>Need Shannon approval before send</div><div class='hs-foot'><span>APR-002</span><span class='icons'>&#9633; &#9671; &#9993; &#8599;</span></div></article><article class='hs-card'><h4>Monthly Facebook Live Q&A</h4><div class='hs-meta'>Ticket owner: Tammy</div><div class='hs-meta'>Create date: 2026-04-02</div><div class='hs-meta'>Close target: 2026-04-05</div><div class='hs-divider'></div><div class='hs-priority'><span class='p-dot p-urgent'></span>Urgent</div><div class='hs-sub'>Review: Pending | Shannon: Pending</div><div class='hs-blocker'>Topic outline not finalized</div><div class='hs-foot'><span>APR-003</span><span class='icons'>&#9633; &#9671; &#9993; &#8599;</span></div></article></div></section><section class='hs-col'><div class='hs-col-head'><span>Testing</span><span class='hs-count'>0</span></div><div class='hs-col-body'></div></section><section class='hs-col'><div class='hs-col-head'><span>Closed</span><span class='hs-count'>0</span></div><div class='hs-col-body'></div></section></div>
+          <div class="hs-board"><section class='hs-col'><div class='hs-col-head'><span>New & Not Reviewed</span><span class='hs-count'>0</span></div><div class='hs-col-body'></div></section><section class='hs-col'><div class='hs-col-head'><span>Reviewed & Pending Dependencies</span><span class='hs-count'>3</span></div><div class='hs-col-body'><article class='hs-card' data-owner='carlos' data-shannon='pending' data-review='pending' data-created='2026-04-01' data-priority='3' data-blocked='1'><h4>VAWA confidentiality myth</h4><div class='hs-meta'>Ticket owner: Carlos</div><div class='hs-meta'>Create date: 2026-04-01</div><div class='hs-meta'>Close target: TBD</div><div class='hs-divider'></div><div class='hs-priority'><span class='p-dot p-urgent'></span>Urgent</div><div class='hs-sub'>Review: Pending | Shannon: Pending</div><div class='hs-blocker'>Waiting on legal review</div><div class='hs-foot'><span>APR-001</span><span class='icons'>&#9633; &#9671; &#9993; &#8599;</span></div></article><article class='hs-card' data-owner='carlos' data-shannon='pending' data-review='pending' data-created='2026-04-06' data-priority='2' data-blocked='1'><h4>VAWA confidentiality blog</h4><div class='hs-meta'>Ticket owner: Carlos</div><div class='hs-meta'>Create date: 2026-04-06</div><div class='hs-meta'>Close target: 2026-04-09</div><div class='hs-divider'></div><div class='hs-priority'><span class='p-dot p-high'></span>High</div><div class='hs-sub'>Review: Pending | Shannon: Pending</div><div class='hs-blocker'>Need SEO metadata and legal approval</div><div class='hs-foot'><span>APR-004</span><span class='icons'>&#9633; &#9671; &#9993; &#8599;</span></div></article><article class='hs-card' data-owner='carlos' data-shannon='pending' data-review='pending' data-created='2026-04-02' data-priority='2' data-blocked='1'><h4>Citizenship fear / English exam short</h4><div class='hs-meta'>Ticket owner: Carlos</div><div class='hs-meta'>Create date: 2026-04-02</div><div class='hs-meta'>Close target: TBD</div><div class='hs-divider'></div><div class='hs-priority'><span class='p-dot p-high'></span>High</div><div class='hs-sub'>Review: Pending | Shannon: Pending</div><div class='hs-blocker'>Editor capacity bottleneck</div><div class='hs-foot'><span>APR-005</span><span class='icons'>&#9633; &#9671; &#9993; &#8599;</span></div></article></div></section><section class='hs-col'><div class='hs-col-head'><span>Working On</span><span class='hs-count'>2</span></div><div class='hs-col-body'><article class='hs-card' data-owner='carlos' data-shannon='pending' data-review='in review' data-created='2026-04-03' data-priority='2' data-blocked='1'><h4>VAWA no police report nurture email</h4><div class='hs-meta'>Ticket owner: Carlos</div><div class='hs-meta'>Create date: 2026-04-03</div><div class='hs-meta'>Close target: 2026-04-04</div><div class='hs-divider'></div><div class='hs-priority'><span class='p-dot p-high'></span>High</div><div class='hs-sub'>Review: In Review | Shannon: Pending</div><div class='hs-blocker'>Need Shannon approval before send</div><div class='hs-foot'><span>APR-002</span><span class='icons'>&#9633; &#9671; &#9993; &#8599;</span></div></article><article class='hs-card' data-owner='tammy' data-shannon='pending' data-review='pending' data-created='2026-04-02' data-priority='3' data-blocked='1'><h4>Monthly Facebook Live Q&A</h4><div class='hs-meta'>Ticket owner: Tammy</div><div class='hs-meta'>Create date: 2026-04-02</div><div class='hs-meta'>Close target: 2026-04-05</div><div class='hs-divider'></div><div class='hs-priority'><span class='p-dot p-urgent'></span>Urgent</div><div class='hs-sub'>Review: Pending | Shannon: Pending</div><div class='hs-blocker'>Topic outline not finalized</div><div class='hs-foot'><span>APR-003</span><span class='icons'>&#9633; &#9671; &#9993; &#8599;</span></div></article></div></section><section class='hs-col'><div class='hs-col-head'><span>Testing</span><span class='hs-count'>0</span></div><div class='hs-col-body'></div></section><section class='hs-col'><div class='hs-col-head'><span>Closed</span><span class='hs-count'>0</span></div><div class='hs-col-body'></div></section></div>
         </div>
       </article>
 
@@ -433,7 +449,7 @@
         </article>
       </section>
 
-      <article class="panel">
+      <article class="panel" id="metrics-panel">
         <div class="panel-head"><h2>Executive Marketing KPI Table</h2><span class="muted">Benchmark and trend status</span></div>
         <div class="panel-body">
           <table>
@@ -454,5 +470,108 @@
       </article>
     </section>
   </main>
+  <script>
+    (() => {
+      const cards = Array.from(document.querySelectorAll('.hs-card'));
+      const cols = Array.from(document.querySelectorAll('.hs-col-body'));
+
+      const setActiveTab = (btn) => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+      };
+
+      const showAllCards = () => cards.forEach(c => c.classList.remove('hidden-card'));
+
+      const applyView = (view) => {
+        showAllCards();
+        if (view === 'mine') {
+          cards.forEach(c => {
+            if (!c.dataset.owner.includes('carlos')) c.classList.add('hidden-card');
+          });
+        }
+        if (view === 'unassigned') {
+          cards.forEach(c => {
+            if ((c.dataset.owner || '').trim() !== '') c.classList.add('hidden-card');
+          });
+        }
+        if (view === 'shannon') {
+          cards.forEach(c => {
+            const needsShannon = c.dataset.shannon !== 'approved';
+            if (!needsShannon) c.classList.add('hidden-card');
+          });
+        }
+      };
+
+      document.querySelectorAll('.tab[data-view]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          setActiveTab(btn);
+          applyView(btn.dataset.view);
+        });
+      });
+
+      const sortCards = (compareFn) => {
+        cols.forEach(col => {
+          const arr = Array.from(col.querySelectorAll('.hs-card'));
+          arr.sort(compareFn).forEach(card => col.appendChild(card));
+        });
+      };
+
+      document.querySelectorAll('[data-action]').forEach(control => {
+        control.addEventListener('click', () => {
+          const action = control.dataset.action;
+          if (action === 'export') {
+            const link = document.createElement('a');
+            link.href = './team_dashboard_data.json';
+            link.download = 'team_dashboard_data.json';
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+          }
+          if (action === 'metrics') {
+            document.getElementById('metrics-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+          if (action === 'add-ticket') {
+            window.location.href = 'mailto:tammy@dyadlaw.com?subject=New%20Marketing%20Ticket&body=Please%20add%20a%20new%20ticket%20to%20the%20board%20with%20owner%2C%20priority%2C%20and%20deadline.';
+          }
+          if (action === 'focus-board') {
+            document.getElementById('board-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+          if (action === 'toggle-compact') {
+            document.body.classList.toggle('compact');
+          }
+          if (action === 'filter-blocked') {
+            const onlyBlocked = !document.body.classList.contains('show-blocked');
+            document.body.classList.toggle('show-blocked', onlyBlocked);
+            showAllCards();
+            if (onlyBlocked) {
+              cards.forEach(c => {
+                if (c.dataset.blocked !== '1') c.classList.add('hidden-card');
+              });
+            }
+          }
+          if (action === 'filter-owner') {
+            const owner = prompt('Filter by owner (example: carlos, tammy, alexis). Leave blank to reset:', '');
+            showAllCards();
+            if (owner && owner.trim()) {
+              const key = owner.trim().toLowerCase();
+              cards.forEach(c => {
+                if (!c.dataset.owner.includes(key)) c.classList.add('hidden-card');
+              });
+            }
+          }
+          if (action === 'sort-priority') {
+            sortCards((a, b) => Number(b.dataset.priority || 0) - Number(a.dataset.priority || 0));
+          }
+          if (action === 'sort-created') {
+            sortCards((a, b) => (b.dataset.created || '').localeCompare(a.dataset.created || ''));
+          }
+          if (action === 'reset-filters') {
+            document.body.classList.remove('compact', 'show-blocked');
+            showAllCards();
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
