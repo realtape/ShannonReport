@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shannon Event Conversion Dashboard</title>
+  <style>
+    :root {
+      --ink: #151515;
+      --paper: #f3eee7;
+      --panel: #fffaf3;
+      --line: #d8cfc4;
+      --brand: #1f4b47;
+      --accent: #b75c1d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: radial-gradient(circle at top right, #e7d4bd, transparent 40%), var(--paper);
+      color: var(--ink);
+    }
+    .shell {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 16px 48px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #1f4b47, #0f2f3b);
+      color: #f8f3ed;
+      border-radius: 20px;
+      padding: 24px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+    }
+    .muted { color: #d3e2dc; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .kpi {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--brand);
+      margin-top: 8px;
+    }
+    .answer {
+      margin-top: 16px;
+      background: #fff;
+      border-left: 6px solid #8c1d18;
+      border-radius: 10px;
+      padding: 14px;
+      border: 1px solid var(--line);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f6efe6;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <h1>Shannon Event Conversion Dashboard</h1>
+      <div class="muted">Auto-refreshing executive view generated from local DYADlaw source documents.</div>
+      <div class="muted">Last build: 2026-04-01T19:53:27</div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div>Event</div>
+        <div class="kpi">Facebook Live Q&A</div>
+        <div>October 2025</div>
+      </article>
+      <article class="card">
+        <div>Event Reactions</div>
+        <div class="kpi">27,600</div>
+      </article>
+      <article class="card">
+        <div>Event Comments</div>
+        <div class="kpi">1,331</div>
+      </article>
+      <article class="card">
+        <div>Attribution Status</div>
+        <div class="kpi" style="color:#8c1d18;text-transform:capitalize;">partial</div>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div>Contacts</div>
+        <div class="kpi">325</div>
+      </article>
+      <article class="card">
+        <div>Consults Scheduled</div>
+        <div class="kpi">41</div>
+      </article>
+      <article class="card">
+        <div>Conversions</div>
+        <div class="kpi">3</div>
+      </article>
+      <article class="card">
+        <div>Consult Rate</div>
+        <div class="kpi">12.62%</div>
+      </article>
+    </section>
+
+    <section class="answer">
+      <strong>Direct answer to Shannon:</strong>
+      <p>Event engagement is confirmed, but conversion attribution is not fully tracked yet. Source breakdown is still being investigated and some lead sources are marked as not digitally tracked.</p>
+    </section>
+
+  </main>
+  <script>
+    setTimeout(() => location.reload(), 180000);
+  </script>
+</body>
+</html>

@@ -1,152 +1,128 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shannon Event Conversion Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shannon Reports Hub</title>
   <style>
     :root {
-      --ink: #151515;
-      --paper: #f3eee7;
-      --panel: #fffaf3;
-      --line: #d8cfc4;
-      --brand: #1f4b47;
-      --accent: #b75c1d;
+      --bg:#f4efe7;
+      --panel:#fff8ef;
+      --panel2:#fff3e0;
+      --text:#2d1a1a;
+      --muted:#7b5b57;
+      --line:#e5d3bd;
+      --brand:#7a1f2a;
+      --gold:#b8892f;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: radial-gradient(circle at top right, #e7d4bd, transparent 40%), var(--paper);
-      color: var(--ink);
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 0%, #f3d6b4 0%, transparent 35%),
+        radial-gradient(circle at 80% 20%, #f0d7bd 0%, transparent 30%),
+        var(--bg);
     }
-    .shell {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 28px 16px 48px;
-    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px; }
     .hero {
-      background: linear-gradient(135deg, #1f4b47, #0f2f3b);
-      color: #f8f3ed;
-      border-radius: 20px;
-      padding: 24px;
+      background: linear-gradient(120deg, #7a1f2a, #5a0f1a);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      color: #f7e7df;
+      box-shadow: 0 20px 60px rgba(68, 23, 12, .2);
     }
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-    }
-    .muted { color: #d3e2dc; }
+    h1 { margin: 0 0 8px; font-size: clamp(1.8rem, 3vw, 2.7rem); }
+    .sub { color: #f3dfd6; }
+    .meta { margin-top: 8px; color: #f2d8c9; font-size: .92rem; }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 14px;
       margin-top: 16px;
     }
     .card {
-      background: var(--panel);
+      background: linear-gradient(180deg, var(--panel), var(--panel2));
       border: 1px solid var(--line);
-      border-radius: 16px;
+      border-radius: 14px;
       padding: 16px;
     }
-    .kpi {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--brand);
-      margin-top: 8px;
-    }
-    .answer {
-      margin-top: 16px;
-      background: #fff;
-      border-left: 6px solid #8c1d18;
-      border-radius: 10px;
-      padding: 14px;
-      border: 1px solid var(--line);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-      font-size: 0.95rem;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    th, td {
-      padding: 10px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background: #f6efe6;
-      font-size: 0.8rem;
+    .tag {
+      display: inline-block;
+      font-size: .75rem;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: .06em;
+      color: #6f232f;
+      border: 1px solid #dcb89c;
+      background: #fbeada;
+      border-radius: 999px;
+      padding: 4px 8px;
+      margin-bottom: 8px;
     }
-    @media (max-width: 900px) {
-      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    h2 { margin: 0 0 8px; font-size: 1.1rem; }
+    p { margin: 0 0 12px; color: var(--muted); line-height: 1.5; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    a.btn {
+      text-decoration: none;
+      display: inline-block;
+      padding: 9px 12px;
+      border-radius: 10px;
+      border: 1px solid #d9b79c;
+      color: #4d141d;
+      background: #fff;
+      font-weight: 600;
+      font-size: .9rem;
     }
-    @media (max-width: 560px) {
-      .grid { grid-template-columns: 1fr; }
+    a.btn.primary {
+      background: #7a1f2a;
+      color: #fff4ed;
+      border-color: #7a1f2a;
+    }
+    .foot {
+      margin-top: 14px;
+      font-size: .9rem;
+      color: #7b5b57;
+      border-top: 1px dashed #ddc6ad;
+      padding-top: 10px;
     }
   </style>
 </head>
 <body>
-  <main class="shell">
+  <main class="wrap">
     <section class="hero">
-      <h1>Shannon Event Conversion Dashboard</h1>
-      <div class="muted">Auto-refreshing executive view generated from local DYADlaw source documents.</div>
-      <div class="muted">Last build: 2026-04-01T19:53:27</div>
+      <h1>Shannon Reports Hub</h1>
+      <div class="sub">Central home page to access all live marketing and operations reports.</div>
+      <div class="meta">Updated: 2026-04-02</div>
     </section>
 
     <section class="grid">
       <article class="card">
-        <div>Event</div>
-        <div class="kpi">Facebook Live Q&A</div>
-        <div>October 2025</div>
+        <span class="tag">Executive</span>
+        <h2>Team + Marketing Executive Dashboard</h2>
+        <p>All team ownership, approvals, blockers, channel KPIs, SEO/search metrics, and event funnel status in one page.</p>
+        <div class="actions">
+          <a class="btn primary" href="./team-dashboard.html">Open Dashboard</a>
+          <a class="btn" href="./team_dashboard_data.json">View Data JSON</a>
+        </div>
       </article>
+
       <article class="card">
-        <div>Event Reactions</div>
-        <div class="kpi">27,600</div>
-      </article>
-      <article class="card">
-        <div>Event Comments</div>
-        <div class="kpi">1,331</div>
-      </article>
-      <article class="card">
-        <div>Attribution Status</div>
-        <div class="kpi" style="color:#8c1d18;text-transform:capitalize;">partial</div>
+        <span class="tag">Attribution</span>
+        <h2>Shannon Event Conversion Report</h2>
+        <p>Focused view for Shannon’s event-conversion question with event metrics, funnel stats, and attribution status.</p>
+        <div class="actions">
+          <a class="btn primary" href="./shannon-event-dashboard.html">Open Report</a>
+          <a class="btn" href="./shannon_event_conversion_data.json">View Data JSON</a>
+        </div>
       </article>
     </section>
 
-    <section class="grid">
-      <article class="card">
-        <div>Contacts</div>
-        <div class="kpi">325</div>
-      </article>
-      <article class="card">
-        <div>Consults Scheduled</div>
-        <div class="kpi">41</div>
-      </article>
-      <article class="card">
-        <div>Conversions</div>
-        <div class="kpi">3</div>
-      </article>
-      <article class="card">
-        <div>Consult Rate</div>
-        <div class="kpi">12.62%</div>
-      </article>
+    <section class="foot">
+      This hub is copy-safe and does not modify original source reports.
     </section>
-
-    <section class="answer">
-      <strong>Direct answer to Shannon:</strong>
-      <p>Event engagement is confirmed, but conversion attribution is not fully tracked yet. Source breakdown is still being investigated and some lead sources are marked as not digitally tracked.</p>
-    </section>
-
   </main>
-  <script>
-    setTimeout(() => location.reload(), 180000);
-  </script>
 </body>
 </html>
