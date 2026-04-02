@@ -22,22 +22,5 @@
     "question": "Have we tracked any conversions connected to the event we did a few weeks ago?",
     "status": "partial",
     "summary": "Event engagement is confirmed, but conversion attribution is not fully tracked yet. Source breakdown is still being investigated and some lead sources are marked as not digitally tracked."
-  },
-  "sources": [
-    {
-      "label": "Shannon Q&A",
-      "status": "loaded",
-      "path": "C:\\Users\\Usuario\\Downloads\\Answers_for_Shannon_Englert_DYADlaw.docx"
-    },
-    {
-      "label": "Content Audit",
-      "status": "loaded",
-      "path": "C:\\Users\\Usuario\\Downloads\\DYADlaw Content Audit Report April 2026 (2).docx"
-    },
-    {
-      "label": "Marketing Huddle Notes",
-      "status": "loaded",
-      "path": "C:\\Users\\Usuario\\Downloads\\marketing huddle - 2026_03_24 12_29 CDT - Notes by Gemini (2).docx"
-    }
-  ]
+  }
 }
